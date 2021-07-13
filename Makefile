@@ -3,16 +3,18 @@ CC = g++
 NVCC = nvcc
 MPICC = mpicxx
 
-serial: serial_kmeans.cpp
-	$(CC) $(CFLAGS) serial_kmeans.cpp -o skmeans
+all: serial cuda mpi
 
-cuda: cuda_kmeans.cu
-	$(NVCC) $(CFLAGS) cuda_kmeans.cu -o ckmeans
+serial: src/serial_kmeans.cpp
+	$(CC) $(CFLAGS) src/serial_kmeans.cpp -o skmeans.o
 
-mpi: mpi_kmeans.cpp
-	$(MPICC) $(CFLAGS) mpi_kmeans.cpp -o mkmeans
+cuda: src/cuda_kmeans.cu
+	$(NVCC) $(CFLAGS) src/cuda_kmeans.cu -o ckmeans.o
+
+mpi: src/mpi_kmeans.cpp
+	$(MPICC) $(CFLAGS) src/mpi_kmeans.cpp -o mkmeans.o
 
 clean:
-	rm skmeans ckmeans mkmeans
+	rm *.o
 
 

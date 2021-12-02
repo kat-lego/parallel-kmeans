@@ -3,3 +3,6 @@ In recent years, data has played a large role in technological advancements. We 
 
 ## Results.
 
+![Alt Text](https://github.com/kat-lego/parallel_kmeans/blob/master/images/dimenstion.png)
+![Alt Text](https://github.com/kat-lego/parallel_kmeans/blob/master/images/number of datapoints.png)
+
